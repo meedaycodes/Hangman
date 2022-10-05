@@ -5,9 +5,9 @@
 """word_list = ["Apple", "Pear", "Orange", "Grapes", "Guava"]
 word = random.choice(word_list)
 print(word)"""
--The second function gets an input from the user
--checks if the length ia equal to 1 and if the user is an alphabet
--And prints out an output based on the values the user inputs
+- The second function gets an input from the user
+- checks if the length ia equal to 1 and if the user is an alphabet
+- And prints out an output based on the values the user inputs
 """guess = input("Enter a single letter here:")
 
 if len(guess) == 1 and guess.isalpha:
