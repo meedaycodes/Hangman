@@ -19,5 +19,15 @@ else:
 ```
 ##Milestone 2
 -This second milestone of the game adds 2 functionalities to it
--The first fuction accepts the user's guess as an  input and performs checks to ensure an alphabet has been provided by the user
+-The first fuction converts the user's guess to lowercase with thw lower() and checks if the guess is in the word variable from milestone 1
+```
+def check_guess(guess):
+    guess = guess.lower()
+    if guess in word:
+        print(f'Good guess. {guess} is in the word')
+    else:
+        print(f'Sorry, {guess} is not in the word.Try again')
+ ```
+- The second function checks that the user has provided a single alphabet character and breaks the while loop that iteratively asks for a valid input
+- the first function is then called within this function but outside the while loop
 ```
