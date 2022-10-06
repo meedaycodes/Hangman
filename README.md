@@ -1,5 +1,5 @@
 # hangman
-##Milestone-1
+##Milestone 1
 - This is a basic python program that performs two functions
 - The first function  returns a random word from a list of fruits provided using the random.choice method
 ```
@@ -17,4 +17,7 @@ if len(guess) == 1 and guess.isalpha():
 else:
     print("Ooops, That's not a valid input")
 ```
-    
+##Milestone 2
+-This second milestone of the game adds 2 functionalities to it
+-The first fuction accepts the user's guess as an  input and performs checks to ensure an alphabet has been provided by the user
+```
