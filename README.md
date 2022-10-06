@@ -18,8 +18,8 @@ else:
     print("Ooops, That's not a valid input")
 ```
 ##Milestone 2
--This second milestone of the game adds 2 functionalities to it
--The first fuction converts the user's guess to lowercase with thw lower() and checks if the guess is in the word variable from milestone 1
+- This second milestone of the game adds 2 functionalities to it
+- The first fuction converts the user's guess to lowercase with thw lower() and checks if the guess is in the word variable from milestone 1
 ```
 def check_guess(guess):
     guess = guess.lower()
@@ -31,3 +31,14 @@ def check_guess(guess):
 - The second function checks that the user has provided a single alphabet character and breaks the while loop that iteratively asks for a valid input
 - the first function is then called within this function but outside the while loop
 ```
+def ask_for_input():
+    while True:
+        guess = input("Enter an alphabet: ")
+
+        if len(guess) == 1 and guess.isalpha():
+            break
+        else:
+            print("Invalid letter. Please enter a single alphabetic character")
+            
+    check_guess(guess)
+   ```
