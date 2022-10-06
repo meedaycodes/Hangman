@@ -12,7 +12,7 @@ word_list = ["Apple", "Pear", "Orange", "Grapes", "Guava"]
 - And prints out an output based on the values the user inputs
 ```
 guess = input("Enter a single letter here:")
-if len(guess) == 1 and guess.isalpha:
+if len(guess) == 1 and guess.isalpha():
     print("Good guess")
 else:
     print("Ooops, That's not a valid input")
