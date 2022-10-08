@@ -42,3 +42,52 @@ def ask_for_input():
             
     check_guess(guess)
    ```
+   ##Milestone 3
+  - In this milestone the Hangman class was created and was initialised with two parameters(word_list, num_lives) within the init constructor
+  - Four other class variables self(word, word_guessed, num_lives, lIst_of_guesses) were defined within the constructor method
+  ```
+  class Hangman:
+    def __init__(self, word_list, num_lives=5):
+        
+        self.num_lives = num_lives
+        self.word_list = word_list
+
+        self.word = random.choice(word_list)
+        self.word_guessed = [str(a) for a in self.list_of_guesses]
+        self.num_letters = len(set(self.word) - set(self.word_guessed))
+        self.list_of_guesses = []
+  ```
+  - The second method check_guess allows for the verification of the letter provided by the user,
+  - First it checks if the guess is in the word variable, if this condition is met, it appends the letter into the list of word_guessed indexing it at a particular position
+ - if this conditions are not met the else block of the code runs
+  ```
+  def check_guess(self, guess):
+        self.guess = guess.lower()
+        if self.guess in self.word:
+            print(f"Good guess! {guess} is in word")
+            for i, letter in enumerate(self.word):
+                if letter == self.guess:
+                    self.word_guessed[i] = self.guess
+            self.num_letters -= 1
+        else:
+            self.num_lives -= 1
+            print(f'Sorry {letter} is not in the word')
+            print(f'You have {self.num_lives} left')
+        self.list_of_guesses.append(guess)
+ ```
+ - The last method ask_for_input() gets the input from the user and checks for two conditions within the while loop
+ 1. if the length of the guess is 1
+ 2. if the guess is an alphabet
+
+ ```
+  def ask_for_input(self):
+        while True:
+            guess = input("Enter a letter: ")
+            if len(guess) != 1 and guess.isalpha() == False:
+                print("Invalid letter. Please enter a single alphabetic character")
+            elif guess in self.list_of_guesses:
+                print("You already tried that letter!")
+            else:
+                self.check_guess(guess)
+                self.list_of_guesses.append(guess)
+```
