@@ -1,5 +1,5 @@
 # hangman
-##Milestone 1
+## Milestone 1
 - This is a basic python program that performs two functions
 - The first function  returns a random word from a list of fruits provided using the random.choice method
 ```
@@ -17,7 +17,7 @@ if len(guess) == 1 and guess.isalpha():
 else:
     print("Ooops, That's not a valid input")
 ```
-##Milestone 2
+## Milestone 2
 - This second milestone of the game adds 2 functionalities to it
 - The first fuction converts the user's guess to lowercase with thw lower() and checks if the guess is in the word variable from milestone 1
 ```
@@ -42,7 +42,7 @@ def ask_for_input():
             
     check_guess(guess)
    ```
-   ##Milestone 3
+  ## Milestone 3
   - In this milestone the Hangman class was created and was initialised with two parameters(word_list, num_lives) within the init constructor
   - Four other class variables self(word, word_guessed, num_lives, lIst_of_guesses) were defined within the constructor method
   ```
@@ -53,7 +53,7 @@ def ask_for_input():
         self.word_list = word_list
 
         self.word = random.choice(word_list)
-        self.word_guessed = [str(a) for a in self.list_of_guesses]
+        self.word_guessed = list(len(self.word)*",")
         self.num_letters = len(set(self.word) - set(self.word_guessed))
         self.list_of_guesses = []
   ```
@@ -90,4 +90,22 @@ def ask_for_input():
             else:
                 self.check_guess(guess)
                 self.list_of_guesses.append(guess)
+```
+## Milestone_4
+- Having defined all the methods within the Hangman class that would be required to play the game, this milestone defines a fuction play_game outside the class
+- Within this play_game function, an instance of the Hangman class "game" is created that takes in two parameters (word_list, num_lives)
+- A while loop is also created that checks for the change in state of certain attributes of the class to print a result of the game
+- The play_game function is finally called outside the while loop
+```
+def play_game():
+    game = Hangman(word_list=["apple", "guava", "pear", "berry", "grape"], num_lives=10)
+    while True:
+        if game.num_lives == 0:
+            print("You Lost! {game.word_guessed} is the correct word")
+            break
+        elif game.num_lives > 0 and game.num_letters <= 0:
+            print("Congratulations! You won the game")
+            break
+        elif game.num_letters > 0:
+            game.ask_for_input()
 ```
